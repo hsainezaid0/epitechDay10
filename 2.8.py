@@ -1,3 +1,17 @@
+def get_words():
+    with open("zen.txt", "r", encoding="utf-8") as file:
+        content = file.read().lower()
+
+    clean_text = ""
+
+    for character in content:
+        if character.isalpha() or character == "'":
+            clean_text += character
+        else:
+            clean_text += " "
+
+    return clean_text.split()
+    
 def longest():
     try:
         words = get_words()
